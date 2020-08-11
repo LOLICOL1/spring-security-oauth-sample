@@ -3,8 +3,8 @@
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>me.lolico.oauth.sample</groupId>
-        <artifactId>spring-security-oauth-sample-parent</artifactId>
+        <groupId>me.lolico.sample</groupId>
+        <artifactId>security-oauth-sample-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -12,12 +12,13 @@
     <artifactId>oauth-2x</artifactId>
     <packaging>pom</packaging>
 
-    <description>Oauth2 Sample for Spring Security Oauth 2.x</description>
+    <description>Oauth2 Samples for Spring Security Oauth 2.x</description>
 
     <modules>
         <module>gateway</module>
         <module>resource-server</module>
         <module>authorization-server</module>
+        <module>third-party-client</module>
     </modules>
 
     <dependencies>

@@ -1,5 +1,9 @@
 server:
   port: 8080
+  servlet:
+    session:
+      cookie:
+        name:
 spring:
   application:
     name: gateway
@@ -16,7 +20,7 @@ security:
       #      二是配置token-info-uri，使用认证服务器的/oauth/check_token端点进行
       #      三是配置jwt.key-value，一般用于对称加密，此密钥需要与和授权服务器的一致，生产环境不建议使用
       #      jwt:
-      #        key-uri: http://localhost:8081/oauth/token_key #不要通过网关转发，因为在获取时网关还未初始化
+      #        key-uri: http://auth-server:8081/oauth/token_key #不要通过网关转发，因为在获取时网关还未初始化
       token-info-uri: http://localhost:${server.port}/authorization-server/oauth/check_token
     sso:
       login-path: /login #使用默认值，需要和callback uri一致
@@ -24,7 +28,7 @@ zuul:
   routes:
     authorization-server:
       path: /authorization-server/**
-      url: http://localhost:8081/
+      url: http://auth-server:8081/ #由于本地调试在同一域localhost下，为避免cookie覆盖导致的csrf，添加127.0.0.1 auth-server到hosts文件，也可设置server.servlet.session.cookie.name解决
       sensitive-headers: Cookie #认证服务器通过Set-Cookie跟踪跳转前后的状态以检查请求是否完成，由于我们通过网关转发请求，所以需要传递Set-Cookie给认证服务器
     resource:
       path: /resource/**
