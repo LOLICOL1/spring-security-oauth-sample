@@ -26,6 +26,6 @@ public class Oauth2ClientSecurityConfiguration extends WebSecurityConfigurerAdap
                 .logout()
                 .logoutSuccessUrl("/")
                 .permitAll();
-        // @formatter:on 144@12493@69723f4
+        // @formatter:on
     }
 }

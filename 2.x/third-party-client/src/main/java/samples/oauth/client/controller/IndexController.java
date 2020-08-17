@@ -24,7 +24,7 @@ public class IndexController {
         return "login";
     }
 
-    @GetMapping("/login-error")
+    @GetMapping(value = "/login", params = "error")
     public String loginError(Model model) {
         model.addAttribute("loginError", true);
         return login();

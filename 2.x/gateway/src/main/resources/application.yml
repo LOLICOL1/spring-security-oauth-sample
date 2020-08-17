@@ -1,9 +1,5 @@
 server:
   port: 8080
-  servlet:
-    session:
-      cookie:
-        name:
 spring:
   application:
     name: gateway
@@ -22,8 +18,6 @@ security:
       #      jwt:
       #        key-uri: http://auth-server:8081/oauth/token_key #不要通过网关转发，因为在获取时网关还未初始化
       token-info-uri: http://localhost:${server.port}/authorization-server/oauth/check_token
-    sso:
-      login-path: /login #使用默认值，需要和callback uri一致
 zuul:
   routes:
     authorization-server:
