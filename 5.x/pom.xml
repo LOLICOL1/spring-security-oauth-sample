@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>me.lolico.sample</groupId>
+        <artifactId>security-oauth-sample-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>security-5x</artifactId>
+    <packaging>pom</packaging>
+
+    <description>Oauth2 Samples for Spring Security 5.x</description>
+
+    <modules>
+        <module>security-resource-server</module>
+        <module>security-authorization-server</module>
+        <module>security-third-party-client</module>
+        <module>security-zuul-gateway</module>
+        <module>security-spring-gateway</module>
+    </modules>
+
+</project>
